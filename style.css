@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -13,73 +12,36 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: white;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-}
-
-#logo {
-    position: fixed;
-    margin: 16px 36px;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    z-index: 3;
-}
-
-#logo img {
-    vertical-align: middle;
+    flex-direction: column;
 }
 
 nav {
-    position: fixed;
-    width: 100%;
     background-color: rgb(7, 7, 82);
-    z-index: 2;
-    top: 0;
-}
-
-nav ul {
-    text-align: right;
-    list-style: none;
-    overflow: hidden;
-    color: white;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    padding: 20px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s;
+    letter-spacing: 2px;
+    transition: color 0.4s;
+    margin-left: 50px;
 }
 
-nav ul li:hover a {
-    color: #ffd208;
+nav ul li a:hover {
+    color: gold;
 }
 
-h1 {
-    margin: 5;
+.display-1 {
+    text-shadow: 4px 4px 2px gold;
+    text-align: center;
     color: rgb(7, 7, 82);
-    font-size: 60px;
-    text-shadow: 4px 4px 2px #ffd208;
+    padding: 0 5px;
 }
 
-h2 {
+.display-4 {
     color: rgb(7, 7, 82);
-    text-shadow: -1px 0 #ffd208, 0 2px #ffd208, 2px 0 #ffd208, 0 -1px #ffd208;
+    text-shadow: -1px 0 gold, 0 2px gold, 2px 0 gold, 0 -1px gold;
 }
 
 p {
@@ -87,6 +49,7 @@ p {
 }
 
 main {
+    text-align: center;
     position: relative;
     background-attachment: fixed;
     background-image: url(images/smccblur.jpg);
@@ -94,25 +57,15 @@ main {
     background-size: cover;
 }
 
-#smcclogo,
-#smccvision,
-#smccmission,
-#ccis,
-#cbm,
-#cthm,
-#studentserv,
-#onlineserv,
-#contactsec {
+
+
+section {
     background-color: #05053bf5;
     border-radius: 15px;
-    padding: 20px;
+    padding: 30px;
     width: 70%;
     margin: 50px auto;
     color: white;
-}
-
-h3 {
-    color: #ffd208;
 }
 
 table {
@@ -125,25 +78,25 @@ table {
     white-space: nowrap;
 }
 
-td {
+table tr {
+    border-bottom: 1px solid #f8f8f8;
+}
+
+table tr td {
     text-align: center;
     padding: 20px .625em .625em .625em;
-    border-bottom: 1px solid #f8f8f8;
     text-align: left;
     font-size: 13px;
 }
 
-#studentserv a,
-#onlineserv a {
+section a {
     font-size: 15px;
     text-decoration: none;
     color: white;
 }
 
-#studentserv a:hover,
-#onlineserv a:hover,
-#contactsec figure a:hover {
-    color: #ffd208;
+section a:hover{
+    color: gold;
 }
 
 #contactsec img {
@@ -171,16 +124,16 @@ td {
 #butt:hover {
     width: auto;
     outline: 0;
-    background: #f4e603;
+    background: gold;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, .2), 0 3px 8px 0 rgba(0, 0, 0, .15);
 }
 
-.hover-underline-animation {
+.nav-link {
     display: inline-block;
     position: relative;
-  }
-  
-  .hover-underline-animation::after {
+}
+
+.nav-link::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -191,45 +144,16 @@ td {
     background-color: gold;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
-  }
-  
-  .hover-underline-animation:hover::after {
+}
+
+.nav-link:hover::after{
     transform: scaleX(1);
     transform-origin: bottom left;
-  }
+}
 
 
-/* Media query for smaller screens */
+
 @media only screen and (max-width: 980px) {
-    nav {
-        position: absolute;
-        width: 100%;
-        background-color: rgb(7, 7, 82);
-        z-index: 2;
-        top: 0;
-    }
-
-    #logo {
-        position: absolute;
-        margin: 16px 36px;
-        color: white;
-        font-weight: bold;
-        font-size: 24px;
-        z-index: 3;
-    }
-
-    nav ul li {
-        display: block;
-        padding: 5px;
-        text-align: end;
-    }
-
-    h1 {
-        margin: 5;
-        color: black;
-        font-size: 40px;
-    }
-
     td {
         padding: 20px .625em .625em .625em;
         height: 60px;
@@ -242,12 +166,23 @@ td {
     #nc {
         text-align: center;
     }
+
+    nav ul li a{
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    nav ul li a{
+        margin-left: 2px;
+    }
 }
 
 @media only screen and (max-width: 1150px) {
     #cbm td {
         white-space: wrap;
     }
+    
 }
 
 @media only screen and (max-width: 600px) {
